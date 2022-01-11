@@ -1,5 +1,7 @@
 /* Database schema to keep the structure of entire database. */
+CREATE DATABASE vet_clinic;
 
+/* Use the following comands to create animals' table */
 CREATE TABLE animals (
     id INT GENERATED ALWAYS AS IDENTITY, 
     name VARCHAR(250), 
