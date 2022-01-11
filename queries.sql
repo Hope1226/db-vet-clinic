@@ -9,6 +9,7 @@ SELECT * FROM animals WHERE neutered;
 SELECT * FROM animals WHERE name = 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.40 AND 17.30 OR weight_kg = 10.40 AND weight_kg = 17.30;
 
+/* AGREGATED FUNCTIONS */
 
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(*) FROM animals GROUP BY escape_attempts HAVING escape_attempts = 0;
