@@ -23,5 +23,6 @@ CREATE TABLE owners (
 /* Use the following comands to create species table */
 CREATE TABLE species (
     id INT GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(250)
+    name VARCHAR(250),
+    PRIMARY KEY(id)
 );
