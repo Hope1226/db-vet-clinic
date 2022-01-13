@@ -16,5 +16,12 @@ CREATE TABLE animals (
 CREATE TABLE owners (
     id INT GENERATED ALWAYS AS IDENTITY,
     full_name VARCHAR(250),
-    age INT
+    age INT,
+    PRIMARY KEY (id)
+);
+
+/* Use the following comands to create species table */
+CREATE TABLE species (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(250)
 );
