@@ -55,6 +55,11 @@ VALUES ('Sam Smith', 34),
        ('Deam Winchester', 14),
        ('Jodie Whittaker', 38);
 
+/* Populate species table */
+INSERT INTO species (name)
+VALUES ('Pokemon'),
+       ('Digimon');
+
 
 
 
