@@ -39,3 +39,9 @@ FULL JOIN animals ON owners.id = owner_id;
 SELECT species.name, COUNT(species.name)
 FROM species
 FULL JOIN animals ON species.id = species_id GROUP BY species.name;
+
+/* How many animals are there per species? */
+
+SELECT animals.name, species.name
+FROM species
+INNER JOIN animals ON species.id = species_id WHERE species.name = 'Digimon' AND animals.owner_id = 2;
