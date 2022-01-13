@@ -26,3 +26,37 @@ CREATE TABLE species (
     name VARCHAR(250),
     PRIMARY KEY(id)
 );
+
+/* Modify animals table */
+
+/* Remove column species */
+BEGIN;
+ALTER TABLE animals
+DROP COLUMN species;
+COMMIT;
+
+/* Add columns sepcies_id and owener_id */
+BEGIN;
+ALTER TABLE animals
+ADD COLUMN species_id INT;
+ALTER TABLE animals
+ADD COLUMN owner_id INT;
+COMMIT;
+
+/* Add foreign key to animals table */
+BEGIN;
+ALTER TABLE animals
+ADD CONSTRAINT species_fk
+FOREIGN KEY (species_id)
+REFERENCES species(id)
+ON DELETE CASCADE;
+COMMIT;
+
+/* Add foreign key to animals table */
+BEGIN;
+ALTER TABLE animals
+ADD CONSTRAINT owner_fk
+FOREIGN KEY (owner_id)
+REFERENCES owners(id)
+ON DELETE CASCADE;
+COMMIT;
