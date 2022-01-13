@@ -44,10 +44,16 @@ ROLLBACK TO SP1;
 UPDATE animals
 SET weight_kg = weight_kg * -1
 WHERE weight_kg < 0;
-
 COMMIT;
 
-
+/* Populate owner table */
+INSERT INTO owners (full_name, age)
+VALUES ('Sam Smith', 34),
+       ('Jannifer Orwell', 19),
+       ('Bob', 45),
+       ('Melody Pond', 77),
+       ('Deam Winchester', 14),
+       ('Jodie Whittaker', 38);
 
 
 
