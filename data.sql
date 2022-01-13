@@ -60,7 +60,7 @@ BEGIN;
 ALTER TABLE animals
 ADD COLUMN species_id INT;
 ALTER TABLE animals
-ADD COLUMN owener_id INT;
+ADD COLUMN owner_id INT;
 COMMIT;
 
 /* Add foreign key to animals table */
@@ -72,6 +72,14 @@ REFERENCES species(id)
 ON DELETE CASCADE;
 COMMIT;
 
+/* Add foreign key to animals table */
+BEGIN;
+ALTER TABLE animals
+ADD CONSTRAINT owner_fk
+FOREIGN KEY (owner_id)
+REFERENCES owners(id)
+ON DELETE CASCADE;
+COMMIT;
 
 
 
