@@ -49,3 +49,11 @@ INNER JOIN animals ON species.id = species_id WHERE species.name = 'Digimon' AND
 SELECT animals.name, owners.full_name
 FROM animals
 INNER JOIN owners ON animals.owner_id = owners.id WHERE animals.escape_attempts = 0 AND owners.full_name = 'Deam Winchester';
+
+/* Who owns the most animals? */
+SELECT owners.full_name AS owners_name, COUNT(owner_id) AS number_animals_owned
+FROM animals
+INNER JOIN owners ON owner_id = owners.id GROUP BY owners.full_name;
+
+
+
