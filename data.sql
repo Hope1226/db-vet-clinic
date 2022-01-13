@@ -47,6 +47,24 @@ WHERE weight_kg < 0;
 
 COMMIT;
 
+/* Modify animals table */
+
+/* Remove column species */
+BEGIN;
+ALTER TABLE animals
+DROP COLUMN species;
+COMMIT;
+
+/* Add columns sepcies_id and owener_id */
+BEGIN;
+ALTER TABLE animals
+ADD COLUMN species_id INT;
+ALTER TABLE animals
+ADD COLUMN owener_id INT;
+COMMIT;
+
+/* Add foreign key to animals table */
+
 
 
 
