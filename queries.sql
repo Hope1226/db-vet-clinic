@@ -34,3 +34,8 @@ INNER JOIN animals ON species.id = species_id WHERE species.name = 'Pokemon';
 SELECT owners.full_name, animals.name
 FROM owners
 FULL JOIN animals ON owners.id = owner_id;
+
+/* How many animals are there per species? */
+SELECT species.name, COUNT(species.name)
+FROM species
+FULL JOIN animals ON species.id = species_id GROUP BY species.name;
