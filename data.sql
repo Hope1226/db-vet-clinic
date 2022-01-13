@@ -64,6 +64,13 @@ ADD COLUMN owener_id INT;
 COMMIT;
 
 /* Add foreign key to animals table */
+BEGIN;
+ALTER TABLE animals
+ADD CONSTRAINT species_fk
+FOREIGN KEY (species_id)
+REFERENCES species(id)
+ON DELETE CASCADE;
+COMMIT;
 
 
 
