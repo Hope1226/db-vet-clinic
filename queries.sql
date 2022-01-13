@@ -41,7 +41,11 @@ FROM species
 FULL JOIN animals ON species.id = species_id GROUP BY species.name;
 
 /* How many animals are there per species? */
-
 SELECT animals.name, species.name
 FROM species
 INNER JOIN animals ON species.id = species_id WHERE species.name = 'Digimon' AND animals.owner_id = 2;
+
+/* List all animals owned by Dean Winchester that haven't tried to escape. */
+SELECT animals.name, owners.full_name
+FROM animals
+INNER JOIN owners ON animals.owner_id = owners.id WHERE animals.escape_attempts = 0 AND owners.full_name = 'Deam Winchester';
