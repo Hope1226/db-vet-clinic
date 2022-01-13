@@ -17,3 +17,10 @@ SELECT AVG(weight_kg) FROM animals;
 SELECT neutered, COUNT(escape_attempts) FROM animals GROUP BY neutered;
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01'  AND '2000-12-31' GROUP BY species;
+
+/* JOINS */
+
+/* What animals belong to Melody Pond? */
+SELECT animals.name, owners.full_name
+FROM owners
+INNER JOIN animals ON owners.id = owner_id WHERE owners.id = 4;;
