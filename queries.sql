@@ -54,6 +54,3 @@ INNER JOIN owners ON animals.owner_id = owners.id WHERE animals.escape_attempts 
 SELECT owners.full_name AS owners_name, COUNT(owner_id) AS number_animals_owned
 FROM animals
 INNER JOIN owners ON owner_id = owners.id GROUP BY owners.full_name;
-
-
-
