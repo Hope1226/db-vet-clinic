@@ -25,8 +25,12 @@ SELECT animals.name, owners.full_name
 FROM owners
 INNER JOIN animals ON owners.id = owner_id WHERE owners.id = 4;
 
-/* List of all animals that are pokemon (their type is Pokemon).? */
-
+/* List of all animals that are pokemon (their type is Pokemon). */
 SELECT animals.name
 FROM species
 INNER JOIN animals ON species.id = species_id WHERE species.name = 'Pokemon';
+
+/* List all owners and their animals, remember to include those that don't own any animal. */
+SELECT owners.full_name, animals.name
+FROM owners
+FULL JOIN animals ON owners.id = owner_id;
