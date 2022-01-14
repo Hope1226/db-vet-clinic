@@ -96,5 +96,11 @@ VALUES ('William Tatcher', 45, '2000-4-23'),
        ('Maisy Smith', 26, '2019-1-17'),
        ('Stephanie Mendez', 64, '1981-5-4'),
        ('Jack Harkness', 38, '2008-6-8');
-       
+
+/* Populate specializations table */
+INSERT INTO specializations (vets_id, species_id)
+VALUES ((SELECT id FROM vets WHERE name = 'William Tatcher'), (SELECT id FROM species WHERE name = 'Pokemon')),
+       ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Digimon')),
+       ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM species WHERE name = 'Pokemon')),
+       ((SELECT id FROM vets WHERE name = 'Jack Harkness'), (SELECT id FROM species WHERE name = 'Digimon'));
 
