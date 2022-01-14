@@ -64,3 +64,9 @@ JOIN vets ON vets_id = vets.id WHERE vets.name = 'William Tatcher';
 SELECT COUNT(*)
 FROM visits
 JOIN vets ON vets_id = vets.id WHERE vets.name = 'Stephanie Mendez';
+
+/* List all vets and their specialties, including vets with no specialties. */
+SELECT vets.name, species.name
+FROM specializations
+FULL JOIN vets ON vets_id = vets.id LEFT JOIN species ON species_id = species.id;
+
