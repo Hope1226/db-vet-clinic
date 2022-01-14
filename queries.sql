@@ -59,3 +59,8 @@ SELECT animals.name, visits.visit_date,
 FROM visits
 JOIN animals ON animal_id = animals.id
 JOIN vets ON vets_id = vets.id WHERE vets.name = 'William Tatcher';
+
+/* How many different animals did Stephanie Mendez see? */
+SELECT COUNT(*)
+FROM visits
+JOIN vets ON vets_id = vets.id WHERE vets.name = 'Stephanie Mendez';
