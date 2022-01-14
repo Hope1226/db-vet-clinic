@@ -62,7 +62,6 @@ ON DELETE CASCADE;
 COMMIT;
 
 /* Use the following comands to create vets table */
-
 CREATE TABLE vets (
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(250),
@@ -71,6 +70,7 @@ CREATE TABLE vets (
     PRIMARY KEY (id)
 );
 
+/* Use the following comands to create specializations table which handles the mtm relations of vets and species */
 CREATE TABLE specializations (
     vets_id INT,
     species_id INT,
@@ -80,4 +80,16 @@ CREATE TABLE specializations (
      CONSTRAINT fk_species
         FOREIGN KEY(species_id)
             REFERENCES species(id)
+);
+
+/* Use the following comands to create visits table which handles the mtm relations of animals and vets */
+CREATE TABLE visits (
+    vets_id INT,
+    animal_id INT,
+    CONSTRAINT fk_vets
+        FOREIGN KEY(vets_id)
+            REFERENCES vets(id),
+     CONSTRAINT fk_animal
+        FOREIGN KEY(animal_id)
+            REFERENCES animals(id)
 );
