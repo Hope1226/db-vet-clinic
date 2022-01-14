@@ -90,3 +90,11 @@ UPDATE animals
 SET owner_id = 5
 WHERE name = 'Angemon' OR name = 'Boarmon';
 
+/* Populate vets table */
+INSERT INTO vets (name, age, date_of_graduation)
+VALUES ('William Tatcher', 45, '2000-4-23'),
+       ('Maisy Smith', 26, '2019-1-17'),
+       ('Stephanie Mendez', 64, '1981-5-4'),
+       ('Jack Harkness', 38, '2008-6-8');
+       
+
