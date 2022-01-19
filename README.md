@@ -2,6 +2,9 @@
 
 > This database is created for a veterinary clinic to store data about animals, animal owners, clinic employees and visits.
 
+## Schema
+![screenshot](vet-clinic-schema.png)
+
 
 ## Getting Started
 
